@@ -40,8 +40,8 @@ MonoBehaviour:
     y: 508
     width: 562
     height: 403
-  m_MinSize: {x: 242, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -70,7 +70,11 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 292}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< master
   controlID: 154
+=======
+  controlID: 157
+>>>>>>> Update Level 2 Testing, Organization
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -93,7 +97,11 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 471}
   m_MaxSize: {x: 18008, y: 14021}
   vertical: 1
+<<<<<<< master
   controlID: 152
+=======
+  controlID: 155
+>>>>>>> Update Level 2 Testing, Organization
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,7 +219,11 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 471}
   m_MaxSize: {x: 18008, y: 14021}
   vertical: 0
+<<<<<<< master
   controlID: 153
+=======
+  controlID: 156
+>>>>>>> Update Level 2 Testing, Organization
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,8 +311,8 @@ MonoBehaviour:
     y: 0
     width: 562
     height: 508
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -417,9 +429,15 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< master
     m_SelectedIDs: 02f3ffff
     m_LastClickedID: -3326
     m_ExpandedIDs: 9efbffff0000000090280000
+=======
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 7ef9ffff90fbffff00000000
+>>>>>>> Update Level 2 Testing, Organization
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -525,9 +543,15 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< master
     m_SelectedIDs: a6270000
     m_LastClickedID: 10150
     m_ExpandedIDs: 000000006e27000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: e0270000
+    m_LastClickedID: 10208
+    m_ExpandedIDs: 00000000a827000000ca9a3bffffff7f
+>>>>>>> Update Level 2 Testing, Organization
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -555,7 +579,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< master
     m_ExpandedIDs: 000000006e270000
+=======
+    m_ExpandedIDs: 00000000a8270000
+>>>>>>> Update Level 2 Testing, Organization
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -744,7 +772,11 @@ MonoBehaviour:
     zGrid:
       m_Target: 0
       speed: 2
+<<<<<<< master
       m_Value: 0
+=======
+      m_Value: 0.9974753
+>>>>>>> Update Level 2 Testing, Organization
   m_Rotation:
     m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
