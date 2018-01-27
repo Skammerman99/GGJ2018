@@ -282,7 +282,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Blink.cs" />
     <Compile Include="Assets\Laser_of_Deletion.cs" />
+    <Compile Include="Assets\onCollisionDeath.cs" />
     <Compile Include="Assets\Patrol.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MicroWave_Click.cs" />
