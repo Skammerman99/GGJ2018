@@ -13,6 +13,8 @@ public class sprite_movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GetComponent<Rigidbody2D>().freezeRotation = true;
+        
 		
 	}
 	
@@ -22,18 +24,36 @@ public class sprite_movement : MonoBehaviour {
         lvl_Zero = Physics2D.OverlapCircle(lvl_ZeroCheck.position, lvl_zeroRad, lvl_ZeroDef);
     }
 	void Update () {
-		
+//jumping
         if(Input.GetKeyDown (KeyCode.Space) && lvl_Zero)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
         }
+        if (Input.GetKeyDown(KeyCode.UpArrow) && lvl_Zero)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+        }
+        if (Input.GetKeyDown(KeyCode.W) && lvl_Zero)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+        }
+        //moving forward
         if (Input.GetKey(KeyCode.RightArrow))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(movement, GetComponent<Rigidbody2D>().velocity.y);
         }
+        if (Input.GetKey(KeyCode.D))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(movement, GetComponent<Rigidbody2D>().velocity.y);
+        }
+        //moving backward
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
         }
-	}
+        if (Input.GetKey(KeyCode.A))
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
+        }
+    }
 }
