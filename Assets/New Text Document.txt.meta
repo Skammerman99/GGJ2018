@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< refs/remotes/origin/CC
 <<<<<<< refs/remotes/origin/CC
 guid: 2d519753c0e8247458a4bf4a8d6c6517
@@ -11,6 +12,10 @@ timeCreated: 1517034242
 guid: a42bf2a7bda34384faf851bcfc870258
 timeCreated: 1517033421
 >>>>>>> level 1 and 2
+=======
+guid: a42bf2a7bda34384faf851bcfc870258
+timeCreated: 1517033421
+>>>>>>> master
 licenseType: Free
 TextScriptImporter:
   externalObjects: {}
