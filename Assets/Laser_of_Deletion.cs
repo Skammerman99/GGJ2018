@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_Lock : MonoBehaviour {
+public class Laser_of_Deletion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
