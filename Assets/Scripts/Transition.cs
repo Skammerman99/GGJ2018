@@ -14,5 +14,9 @@ public class Transition : MonoBehaviour {
     void OnGUI()
     {
         alpha += fadeDir * fadeSpeed * Time.deltaTime;
+<<<<<<< Updated upstream
+=======
+        //4
+>>>>>>> Stashed changes
     }
 }
