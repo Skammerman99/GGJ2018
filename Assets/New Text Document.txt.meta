@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< refs/remotes/origin/CC
 guid: 2d519753c0e8247458a4bf4a8d6c6517
 timeCreated: 1517033829
+=======
+guid: 4e2dbf384aba9fd4398851cb83be4f05
+timeCreated: 1517034242
+>>>>>>> Added base of patrol code
 licenseType: Free
 TextScriptImporter:
   externalObjects: {}
