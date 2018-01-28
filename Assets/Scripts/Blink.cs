@@ -16,13 +16,15 @@ public class Blink : MonoBehaviour {
     public bool wall_left;
     public bool wall_right;
 
+    public AudioSource ASource = Resources.Load<AudioSource>("Player (Audio Source)");
+    public AudioClip blinkClip = Resources.Load<AudioClip>("blink");
 
     public GameObject spawnPrefab;
    
 
     // Use this for initialization
     void Start () {
-       
+
 	}
 
     private void FixedUpdate()
@@ -69,6 +71,8 @@ public class Blink : MonoBehaviour {
             blinking(direction);
             if (ready)
             {
+                ASource.loop = false;
+                ASource.PlayOneShot(blinkClip);
                 ready = false;
             }
         }
