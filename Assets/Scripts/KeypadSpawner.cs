@@ -17,6 +17,7 @@ public class KeypadSpawner : MonoBehaviour {
     {
         GameObject keypad = (GameObject)Instantiate(spawnPrefab, transform.position, transform.rotation);
         keypad.transform.position = new Vector3(keypad.transform.position.x, keypad.transform.position.y + 3, keypad.transform.position.z);
+        spawned = true;
     }
 
 
@@ -28,7 +29,7 @@ public class KeypadSpawner : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && !spawned)
             {
                 SpawnMe();
             }

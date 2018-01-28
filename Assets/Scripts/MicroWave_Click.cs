@@ -16,6 +16,7 @@ public class MicroWave_Click : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         playerCode = "";
+        gm = transform.parent.GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
