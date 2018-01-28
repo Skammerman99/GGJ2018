@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 167824244}
   m_Layer: 8
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5723,7 +5723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 16
-  movement: 6
+  movement: 5
   lvl_ZeroCheck: {fileID: 1511999609}
   lvl_zeroRad: 0.1
   lvl_ZeroDef:
@@ -6091,8 +6091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359eaf08137d146458a942adde195d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 0}
-  ready: 0
+  spawnPrefab: {fileID: 1630109399240478, guid: 1fb7678e0e56d5342baf58044141ead8,
+    type: 2}
 --- !u!61 &1452694295
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6208,6 +6208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 1173218551755328, guid: 61cd0d4fa43b70d4880dd8ce0d9adcb9,
     type: 2}
+  delay: 2
+  speed: 3
+  direction: -1
 --- !u!212 &1698313641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7224,7 +7227,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.8897059, g: 0.8897059, b: 0.8897059, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

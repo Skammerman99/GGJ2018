@@ -6,10 +6,9 @@ public class KeypadSpawner : MonoBehaviour {
 
     public GameObject spawnPrefab;
     bool spawned = false;
-    public bool ready = false;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
 
 		
 	}
@@ -17,40 +16,28 @@ public class KeypadSpawner : MonoBehaviour {
     void SpawnMe()
     {
         GameObject keypad = (GameObject)Instantiate(spawnPrefab, transform.position, transform.rotation);
-
+        keypad.transform.position = new Vector3(keypad.transform.position.x, keypad.transform.position.y + 3, keypad.transform.position.z);
     }
 
 
     // Update is called once per frame
 
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (CompareTag("Player"))
+
+        if (collision.gameObject.CompareTag("Player"))
         {
 
-            ready = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collision2D collision)
-    {
-        if (CompareTag("Player"))
-        {
-
-            ready = false;
-        }
-
-    }
-
-    void Update () {
-        if (Input.GetKey(KeyCode.E) && ready)
-        {
-            if (!spawned)
+            if (Input.GetKey(KeyCode.E))
             {
                 SpawnMe();
-                spawned = true;
             }
         }
+    }
+
+
+    void Update() {
+        
 
     }
 }
