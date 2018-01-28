@@ -8,14 +8,19 @@ public class Blink : MonoBehaviour {
     float timer = 0f;
     bool ready = true;
     int direction = 1;
-    
-	// Use this for initialization
-	void Start () {
+
+    public GameObject spawnPrefab;
+   
+
+    // Use this for initialization
+    void Start () {
        
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
 
         if (!ready) {
             timer += Time.deltaTime;
@@ -46,6 +51,7 @@ public class Blink : MonoBehaviour {
 
         if (Input.GetKeyDown (KeyCode.Q) && ready)
         {
+            SpawnMe();
             blinking(direction);
             if (ready)
             {
@@ -61,8 +67,25 @@ public class Blink : MonoBehaviour {
         //Debug.Log("Blink");
         transform.position = new Vector3(transform.position.x + (3 * direction), transform.position.y, transform.position.z);
     }
-    
-    
 
     
+
+    // Use this for initialization
+   
+
+    void SpawnMe()
+    {
+        GameObject effect = (GameObject)Instantiate(spawnPrefab, transform.position, transform.rotation);
+        Destroy(effect, .15f);
+    }
+
+    // Update is called once per frame
+    
+   
+
+
 }
+
+
+    
+
