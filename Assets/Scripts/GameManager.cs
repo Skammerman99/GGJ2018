@@ -30,8 +30,10 @@ public class GameManager : MonoBehaviour {
     public void SceneLoader(int SceneIndex)
      {
        StartCoroutine(Fadding());
-       Fadery();
-       SceneManager.LoadScene(SceneIndex + 1);
+
+       ++SceneIndex;
+       SceneManager.LoadScene(SceneIndex);
+
     }
 
 }
