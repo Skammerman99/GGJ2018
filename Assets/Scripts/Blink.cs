@@ -9,6 +9,14 @@ public class Blink : MonoBehaviour {
     bool ready = true;
     int direction = 1;
 
+    public Transform wall_check_right;
+    public Transform wall_check_left;
+    public float wall_rad;
+    public LayerMask wallDef;
+    public bool wall_left;
+    public bool wall_right;
+
+
     public GameObject spawnPrefab;
    
 
@@ -16,9 +24,15 @@ public class Blink : MonoBehaviour {
     void Start () {
        
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void FixedUpdate()
+    {
+        wall_right = Physics2D.OverlapCircle(wall_check_right.position, wall_rad, wallDef);
+        wall_left = Physics2D.OverlapCircle(wall_check_left.position, wall_rad, wallDef);
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 
 
@@ -49,7 +63,7 @@ public class Blink : MonoBehaviour {
             direction = 1;
         }
 
-        if (Input.GetKeyDown (KeyCode.Q) && ready)
+        if (Input.GetKeyDown (KeyCode.Q) && ready && !(direction == 1 && wall_right) && !(direction == -1 && wall_left))
         {
             SpawnMe();
             blinking(direction);
