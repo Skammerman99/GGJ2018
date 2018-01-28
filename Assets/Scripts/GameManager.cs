@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
      {
        StartCoroutine(Fadding());
 
-       ++SceneIndex;
+       //++SceneIndex;
        SceneManager.LoadScene(SceneIndex);
 
     }
