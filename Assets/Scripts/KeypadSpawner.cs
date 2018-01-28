@@ -16,6 +16,7 @@ public class KeypadSpawner : MonoBehaviour {
     void SpawnMe()
     {
         GameObject keypad = (GameObject)Instantiate(spawnPrefab, transform.position, transform.rotation);
+        keypad.GetComponent<Code>().code = GetComponent<MicrowaveCode>().code;
         keypad.transform.position = new Vector3(keypad.transform.position.x, keypad.transform.position.y + 3, keypad.transform.position.z);
         spawned = true;
     }
