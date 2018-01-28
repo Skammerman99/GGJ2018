@@ -18,7 +18,7 @@ public class Vision : MonoBehaviour {
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerMovement>().dead = true;
         }
 
     }

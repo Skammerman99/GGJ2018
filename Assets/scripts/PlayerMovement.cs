@@ -18,10 +18,15 @@ public class PlayerMovement : MonoBehaviour
     public bool wall_left;
     public bool wall_right;
 
+    public Vector3 start;
+     float timer;
+
     public Sprite[] sprites;
     public float fps;
     private SpriteRenderer spriteRenderer;
     float xStart;
+
+    public bool dead = false;
 
 
     // Use this for initialization
@@ -29,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().freezeRotation = true;
         spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
+        start = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
     // Update is called once per frame
@@ -39,48 +45,71 @@ public class PlayerMovement : MonoBehaviour
         wall_left = Physics2D.OverlapCircle(wall_check_left.position, wall_rad, wallDef);
 
     }
+
+    void Respawn()
+    {
+        
+        gameObject.transform.position = start;
+        dead = false;
+    }
+
     void Update()
     {
 
 
-        //animation
-        int index = (int)(Time.timeSinceLevelLoad * fps);
-        index = index % sprites.Length;
-        
+        if (dead)
+        {
+            timer += Time.deltaTime;
 
-        //jumping
-        if (Input.GetKeyDown(KeyCode.Space) && lvl_Zero || (Input.GetKeyDown(KeyCode.UpArrow) && lvl_Zero) || (Input.GetKeyDown(KeyCode.W) && lvl_Zero))
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-        }
-        //moving forward
-        else if (Input.GetKey(KeyCode.RightArrow) && !wall_right || (Input.GetKey(KeyCode.D) && !wall_right))
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(movement, GetComponent<Rigidbody2D>().velocity.y);
-            if (index == 0)
+            if (timer >= 0.75f)
             {
-                index = 1;
+                Respawn();
+                timer = 0;
             }
-            spriteRenderer.sprite = sprites[index];
-            //transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-            spriteRenderer.flipX = false;
-           
         }
-        //moving backward
-        else if (Input.GetKey(KeyCode.A) && !wall_left || (Input.GetKey(KeyCode.LeftArrow) && !wall_left))
+        else
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
-            if (index == 0)
+
+            //animation
+            int index = (int)(Time.timeSinceLevelLoad * fps);
+            index = index % sprites.Length;
+
+
+            //jumping
+            if (Input.GetKeyDown(KeyCode.Space) && lvl_Zero || (Input.GetKeyDown(KeyCode.UpArrow) && lvl_Zero) || (Input.GetKeyDown(KeyCode.W) && lvl_Zero))
             {
-                index = 1;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
             }
-            spriteRenderer.sprite = sprites[index];
-            //transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-            spriteRenderer.flipX = true;
-            
+            //moving forward
+            else if (Input.GetKey(KeyCode.RightArrow) && !wall_right || (Input.GetKey(KeyCode.D) && !wall_right))
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(movement, GetComponent<Rigidbody2D>().velocity.y);
+                if (index == 0)
+                {
+                    index = 1;
+                }
+                spriteRenderer.sprite = sprites[index];
+                //transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+                spriteRenderer.flipX = false;
+
             }
-        else {
-            spriteRenderer.sprite = sprites[0];
+            //moving backward
+            else if (Input.GetKey(KeyCode.A) && !wall_left || (Input.GetKey(KeyCode.LeftArrow) && !wall_left))
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
+                if (index == 0)
+                {
+                    index = 1;
+                }
+                spriteRenderer.sprite = sprites[index];
+                //transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+                spriteRenderer.flipX = true;
+
+            }
+            else
+            {
+                spriteRenderer.sprite = sprites[0];
+            }
         }
     }
 }

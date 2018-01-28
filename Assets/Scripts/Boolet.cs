@@ -18,8 +18,8 @@ public class Boolet : MonoBehaviour {
         }
         if (other.gameObject.CompareTag("Player"))
         {
-           Destroy(other.gameObject);
-           Destroy(gameObject);
+            other.gameObject.GetComponent<PlayerMovement>().dead = true;
+            Destroy(gameObject);
         }
     }
 
