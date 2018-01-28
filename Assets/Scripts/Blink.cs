@@ -40,7 +40,7 @@ public class Blink : MonoBehaviour {
 
         if (!ready) {
             timer += Time.deltaTime;
-            if (timer >= 1.5)
+            if (timer >= 0.75)
             {
                 ready = true;
                 timer = 0;
