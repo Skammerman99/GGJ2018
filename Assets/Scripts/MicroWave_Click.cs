@@ -7,6 +7,10 @@ public class MicroWave_Click : MonoBehaviour {
     public GameManager gm;
     public int level = 0;
 
+    public static bool range = false;
+
+    float timer = 0;
+
 	public  string correctCode = "7845";
 	public static string playerCode = "";
 
@@ -21,6 +25,7 @@ public class MicroWave_Click : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		//Debug.Log (playerCode);
 
 		if (totalDigits == 4) 
@@ -41,33 +46,46 @@ public class MicroWave_Click : MonoBehaviour {
 		}
 	}
 
-	void OnMouseUp()
-		{
-		playerCode += gameObject.name;
-		totalDigits += 1;
-		GetComponent<SpriteRenderer> ().color = new Color (1, 1, 0);
-		StartCoroutine (waittochange());
-		didclick = "y";
-		}
+    void OnMouseUp()
+    {
+        if (range)
+        {
+            playerCode += gameObject.name;
+            totalDigits += 1;
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 0);
+            StartCoroutine(waittochange());
+            didclick = "y";
 
+
+        }
+    }
 	void OnMouseOver()
 	{
-		if (didclick == "n")
-		GetComponent<SpriteRenderer> ().color = new Color (0, 1, 0);
-		//Debug.Log ("Hovering");
+        if (range)
+        {
+            if (didclick == "n")
+                GetComponent<SpriteRenderer>().color = new Color(0, 1, 0);
+            //Debug.Log ("Hovering");
+        }
 	}
 
 	void OnMouseExit()
 	{
-		if (didclick == "n")
-		GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1);
-		//Debug.Log ("Not Hovering");
+        if (range)
+        {
+            if (didclick == "n")
+                GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+            //Debug.Log ("Not Hovering");
+        }
 	}
 
 	IEnumerator waittochange()
 	{
-		yield return new WaitForSeconds (1);
-		GetComponent<SpriteRenderer> ().color = new Color (1, 1, 1);
-		didclick = "n";
+        if (range)
+        {
+            yield return new WaitForSeconds(1);
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
+            didclick = "n";
+        }
 	}
 }

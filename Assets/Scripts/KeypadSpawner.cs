@@ -34,11 +34,28 @@ public class KeypadSpawner : MonoBehaviour {
                 SpawnMe();
             }
         }
+        MicroWave_Click.range = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            MicroWave_Click.range = false ;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            MicroWave_Click.range = true;
+        }
     }
 
 
     void Update() {
-        
+
 
     }
 }
