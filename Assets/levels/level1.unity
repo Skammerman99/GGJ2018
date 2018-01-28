@@ -113,7 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< master
 --- !u!1 &90331980
 GameObject:
@@ -272,10 +271,6 @@ CircleCollider2D:
 --- !u!1001 &308306424
 Prefab:
 >>>>>>> Camera Update
-=======
---- !u!1001 &308306424
-Prefab:
->>>>>>> branch_timmy
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -332,7 +327,6 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 308306424}
 --- !u!1 &593404235
-<<<<<<< HEAD
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -361,15 +355,12 @@ Transform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &863046560
-=======
->>>>>>> branch_timmy
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 863046562}
   - component: {fileID: 863046561}
   m_Layer: 0
@@ -424,22 +415,10 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &863046562
-=======
-  - component: {fileID: 593404236}
-  m_Layer: 0
-  m_Name: Right Limit
-  m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &593404236
->>>>>>> branch_timmy
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 863046560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2491577, y: 1.6354076, z: 0.033203125}
@@ -447,15 +426,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-=======
-  m_GameObject: {fileID: 593404235}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1077727714}
-  m_RootOrder: 6
->>>>>>> branch_timmy
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &904798108
 GameObject:
