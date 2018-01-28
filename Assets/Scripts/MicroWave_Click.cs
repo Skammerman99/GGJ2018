@@ -5,7 +5,7 @@ using UnityEngine;
 public class MicroWave_Click : MonoBehaviour {
 
     public GameManager gm;
-    public int level = 1;
+    public int level;
 
     public static bool range = false;
 
@@ -20,20 +20,23 @@ public class MicroWave_Click : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         correctCode = transform.parent.GetComponent<Code>().code;
+        level = transform.parent.GetComponent<Code>().level;
         playerCode = "";
         gm = transform.parent.GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        level = transform.parent.GetComponent<Code>().level;
 
-		//Debug.Log (playerCode);
 
-		if (totalDigits == 4) 
+        //Debug.Log (playerCode);
+
+        if (totalDigits == 4) 
 		{
 			if (playerCode == correctCode) {
-
-                gm.SceneLoader(level+1);
+                level++;
+                gm.SceneLoader(level);
 				//Debug.Log ("Correct");
 			} 
 

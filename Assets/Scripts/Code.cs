@@ -5,6 +5,7 @@ using UnityEngine;
 public class Code : MonoBehaviour {
 
     public string code = "1111";
+    public int level = 1;
 
 	// Use this for initialization
 	void Start () {
