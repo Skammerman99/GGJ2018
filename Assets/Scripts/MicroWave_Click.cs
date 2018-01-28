@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class MicroWave_Click : MonoBehaviour {
 
-	public static string correctCode = "7845";
+    public GameManager gm;
+    public int level = 0;
+
+	public  string correctCode = "7845";
 	public static string playerCode = "";
 
 	public static int totalDigits = 0;
@@ -12,7 +15,7 @@ public class MicroWave_Click : MonoBehaviour {
 	public static string didclick = "n";
 	// Use this for initialization
 	void Start () {
-		
+        playerCode = "";
 	}
 	
 	// Update is called once per frame
@@ -22,6 +25,8 @@ public class MicroWave_Click : MonoBehaviour {
 		if (totalDigits == 4) 
 		{
 			if (playerCode == correctCode) {
+
+                gm.SceneLoader(level);
 				//Debug.Log ("Correct");
 			} 
 
