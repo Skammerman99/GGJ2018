@@ -8,9 +8,18 @@ public class Laser_of_Deletion : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+   
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerMovement>().dead = true;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
