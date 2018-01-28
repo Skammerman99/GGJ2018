@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] sprites;
     public float fps;
     private SpriteRenderer spriteRenderer;
+    float xStart;
+
 
     // Use this for initialization
     void Start()
@@ -39,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+
+
         //animation
         int index = (int)(Time.timeSinceLevelLoad * fps);
         index = index % sprites.Length;
@@ -58,7 +62,9 @@ public class PlayerMovement : MonoBehaviour
                 index = 1;
             }
             spriteRenderer.sprite = sprites[index];
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            //transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            spriteRenderer.flipX = false;
+           
         }
         //moving backward
         else if (Input.GetKey(KeyCode.A) && !wall_left || (Input.GetKey(KeyCode.LeftArrow) && !wall_left))
@@ -69,8 +75,10 @@ public class PlayerMovement : MonoBehaviour
                 index = 1;
             }
             spriteRenderer.sprite = sprites[index];
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-        }
+            //transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            spriteRenderer.flipX = true;
+            
+            }
         else {
             spriteRenderer.sprite = sprites[0];
         }
