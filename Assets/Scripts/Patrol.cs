@@ -13,24 +13,31 @@ public class Patrol : MonoBehaviour {
     public float right_offset;
     public float left_offset;
     float timer = 0f;
+    float lastPos = 0, currPos = 0;
+    
 
     // Use this for initialization
     void Start () {
 
            pos1 = new Vector3(obj.transform.position.x - left_offset, obj.transform.position.y, obj.transform.position.z);
-           pos2 = new Vector3(obj.transform.position.y + right_offset, obj.transform.position.y, obj.transform.position.z);
+           pos2 = new Vector3(obj.transform.position.x + right_offset, obj.transform.position.y, obj.transform.position.z);
 }
 	
 	// Update is called once per frame
 	void Update () {
         transform.position = Vector3.Lerp(pos1, pos2, Mathf.PingPong(Time.time/3 * speed, 1.0f));
 
-        timer += Time.deltaTime;
+        lastPos = currPos;
+        currPos = transform.position.x;
 
-        if (timer >= 3)
+        if(currPos >= lastPos)
         {
-            timer = 0;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+
         }
     }
 }
