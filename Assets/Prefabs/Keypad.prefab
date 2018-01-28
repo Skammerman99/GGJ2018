@@ -128,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4235579310619752}
   - component: {fileID: 114573912590881764}
+  - component: {fileID: 114869030571614946}
   m_Layer: 0
   m_Name: Keypad
   m_TagString: Untagged
@@ -710,7 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114063485889120682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -724,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114083236378964282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,7 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114256607037700172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -752,7 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114269977833175426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -766,7 +767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114288817736586496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -780,7 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114411088523996614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -794,7 +795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114573912590881764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -806,6 +807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39c7551e09c29c54fab59ee9cb3264ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  black: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114608131173505350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -830,7 +833,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
+--- !u!114 &114869030571614946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630109399240478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59ee0408153ca1c4bbf1a5baa57a48a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  code: 1111
 --- !u!114 &114880818061943818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -844,7 +859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!114 &114883843268532944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -858,7 +873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   level: 0
-  correctCode: 7845
+  correctCode: 
 --- !u!212 &212014212737744474
 SpriteRenderer:
   m_ObjectHideFlags: 1

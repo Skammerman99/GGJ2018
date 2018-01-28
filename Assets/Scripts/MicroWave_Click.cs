@@ -11,7 +11,7 @@ public class MicroWave_Click : MonoBehaviour {
 
     float timer = 0;
 
-	public  string correctCode = "7845";
+	public  string correctCode;
 	public static string playerCode = "";
 
 	public static int totalDigits = 0;
@@ -19,6 +19,7 @@ public class MicroWave_Click : MonoBehaviour {
 	public static string didclick = "n";
 	// Use this for initialization
 	void Start () {
+        correctCode = transform.parent.GetComponent<Code>().code;
         playerCode = "";
         gm = transform.parent.GetComponent<GameManager>();
 	}
