@@ -5708,6 +5708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: 1234
+  level: 2
 --- !u!4 &608256778 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4104750174204294, guid: 46eca5e21d58a1649aef0d768787b782,

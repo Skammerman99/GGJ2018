@@ -28,9 +28,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool dead = false;
 
-    public AudioSource ASource = Resources.Load<AudioSource>("Player (Audio Source)");
-    public AudioClip walkClip = Resources.Load<AudioClip> ("walk");
-    public AudioClip jumpClip = Resources.Load<AudioClip>("jump");
+    public AudioSource ASource;
+    public AudioClip walkClip;
+    public AudioClip jumpClip;
 
 
 

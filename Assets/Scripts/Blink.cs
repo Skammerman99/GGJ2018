@@ -16,8 +16,8 @@ public class Blink : MonoBehaviour {
     public bool wall_left;
     public bool wall_right;
 
-    public AudioSource ASource = Resources.Load<AudioSource>("Player (Audio Source)");
-    public AudioClip blinkClip = Resources.Load<AudioClip>("blink");
+    public AudioSource ASource;
+    public AudioClip blinkClip;
 
     public GameObject spawnPrefab;
    

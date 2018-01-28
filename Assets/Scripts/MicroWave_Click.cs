@@ -37,7 +37,7 @@ public class MicroWave_Click : MonoBehaviour {
 			if (playerCode == correctCode) {
                 level++;
 
-                if (level >= 5)
+                if (level >= 6)
                 {
                     gm.SceneLoader(0);
                 }

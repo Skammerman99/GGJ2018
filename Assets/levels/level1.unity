@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   code: 1111
-  level: 0
+  level: 1
 --- !u!1 &1077727712
 GameObject:
   m_ObjectHideFlags: 0
