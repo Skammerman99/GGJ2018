@@ -19,12 +19,12 @@ public class CameraRestrictions : MonoBehaviour {
 	void Update () {
 		if(player.transform.position.x > right.transform.position.x)
         {
-            transform.position = new Vector3(right.transform.position.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(right.transform.position.x, player.transform.position.y, transform.position.z);
         }else if(player.transform.position.x < left.transform.position.x)
         {
-         transform.position = new Vector3(left.transform.position.x, transform.position.y, transform.position.z);
+         transform.position = new Vector3(left.transform.position.x, player.transform.position.y, transform.position.z);
         }
         else {
-            transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);                }
+            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);                }
 	}
 }

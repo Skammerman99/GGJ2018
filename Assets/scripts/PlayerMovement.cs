@@ -18,13 +18,15 @@ public class PlayerMovement : MonoBehaviour
     public bool wall_left;
     public bool wall_right;
 
+    public Sprite[] sprites;
+    public float fps;
+    private SpriteRenderer spriteRenderer;
 
     // Use this for initialization
     void Start()
     {
         GetComponent<Rigidbody2D>().freezeRotation = true;
-
-
+        spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
     }
 
     // Update is called once per frame
@@ -37,36 +39,40 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        //animation
+        int index = (int)(Time.timeSinceLevelLoad * fps);
+        index = index % sprites.Length;
+        
+
         //jumping
-        if (Input.GetKeyDown(KeyCode.Space) && lvl_Zero)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && lvl_Zero)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-        }
-        if (Input.GetKeyDown(KeyCode.W) && lvl_Zero)
+        if (Input.GetKeyDown(KeyCode.Space) && lvl_Zero || (Input.GetKeyDown(KeyCode.UpArrow) && lvl_Zero) || (Input.GetKeyDown(KeyCode.W) && lvl_Zero))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
         }
         //moving forward
-        if (Input.GetKey(KeyCode.RightArrow) && !wall_right)
+        else if (Input.GetKey(KeyCode.RightArrow) && !wall_right || (Input.GetKey(KeyCode.D) && !wall_right))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(movement, GetComponent<Rigidbody2D>().velocity.y);
-        }
-        if (Input.GetKey(KeyCode.D) && !wall_right)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(movement, GetComponent<Rigidbody2D>().velocity.y);
+            if (index == 0)
+            {
+                index = 1;
+            }
+            spriteRenderer.sprite = sprites[index];
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
         }
         //moving backward
-        if (Input.GetKey(KeyCode.LeftArrow) && !wall_left)
+        else if (Input.GetKey(KeyCode.A) && !wall_left || (Input.GetKey(KeyCode.LeftArrow) && !wall_left))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
+            if (index == 0)
+            {
+                index = 1;
+            }
+            spriteRenderer.sprite = sprites[index];
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
         }
-        if (Input.GetKey(KeyCode.A) && !wall_left)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
+        else {
+            spriteRenderer.sprite = sprites[0];
         }
     }
 }
