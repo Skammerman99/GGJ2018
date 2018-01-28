@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public bool wall_right;
 
     public Vector3 start;
-     float timer;
+    float timer;
 
     public Sprite[] sprites;
     public float fps;
@@ -28,6 +28,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool dead = false;
 
+    public AudioSource ASource = Resources.Load<AudioSource>("Player (Audio Source)");
+    public AudioClip walkClip = Resources.Load<AudioClip> ("walk");
+    public AudioClip jumpClip = Resources.Load<AudioClip>("jump");
+
+
 
     // Use this for initialization
     void Start()
@@ -35,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody2D>().freezeRotation = true;
         spriteRenderer = GetComponent<Renderer>() as SpriteRenderer;
         start = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        ASource = GetComponent<AudioSource>();
+        ASource.clip = walkClip;
     }
 
     // Update is called once per frame
@@ -48,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Respawn()
     {
-        
+
         gameObject.transform.position = start;
         dead = false;
     }
@@ -79,7 +86,10 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && lvl_Zero || (Input.GetKeyDown(KeyCode.UpArrow) && lvl_Zero) || (Input.GetKeyDown(KeyCode.W) && lvl_Zero))
             {
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+                ASource.loop = false;
+                ASource.PlayOneShot(jumpClip);
             }
+
             //moving forward
             else if (Input.GetKey(KeyCode.RightArrow) && !wall_right || (Input.GetKey(KeyCode.D) && !wall_right))
             {
@@ -89,26 +99,47 @@ public class PlayerMovement : MonoBehaviour
                     index = 1;
                 }
                 spriteRenderer.sprite = sprites[index];
-                //transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
                 spriteRenderer.flipX = false;
 
+                if (lvl_Zero && GetComponent<Rigidbody2D>().velocity.y <= 0)
+                {
+                    if (!ASource.isPlaying)
+                    {
+                        ASource.loop = true;
+                        ASource.PlayOneShot(walkClip);
+                    }
+                }
             }
+
             //moving backward
             else if (Input.GetKey(KeyCode.A) && !wall_left || (Input.GetKey(KeyCode.LeftArrow) && !wall_left))
             {
+
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-movement, GetComponent<Rigidbody2D>().velocity.y);
                 if (index == 0)
                 {
                     index = 1;
                 }
                 spriteRenderer.sprite = sprites[index];
-                //transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
                 spriteRenderer.flipX = true;
 
+                if (lvl_Zero && GetComponent<Rigidbody2D>().velocity.y <= 0)
+                {
+                    if (!ASource.isPlaying)
+                    {
+                        ASource.loop = true;
+                        ASource.PlayOneShot(walkClip);
+                    }
+                }
             }
+
             else
             {
                 spriteRenderer.sprite = sprites[0];
+                if (GetComponent<Rigidbody2D>().velocity == new Vector2(0,0))
+                {
+                    ASource.Stop();
+                }
             }
         }
     }
